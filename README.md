@@ -32,6 +32,7 @@ Remove the "This page is being completed" banner once they're all gone.
       Org's NOC, Tech and Abuse POC. BC117-ARIN stays as Admin.
       Then make `noc@` and `abuse@` into `mailto:` links on the page, remove their PENDING ARIN tags,
       add the role POC handles, and switch the abuse policy address to `abuse@`.
+      Also link `abuse@` in the Research section's opt-out paragraph.
 - [x] **security.txt:** `security@` is the first Contact line.
 - [ ] **ASN, IPv4 and IPv6 prefixes:** fill these in and link each to its ARIN RDAP record.
       Add bgp.tools / bgp.he.net links once the ASN is known.
@@ -55,3 +56,6 @@ Remove the "This page is being completed" banner once they're all gone.
 - **Keep `geofeed.csv` in sync with the Network section** whenever prefixes are added or move.
 - **When you review the page**, update the "Last reviewed" date in the footer.
 - **Footer:** bump the © year when the page is next edited in a new year.
+- **Research section:** we don't scan. If that ever changes, publish the scanner addresses,
+  reverse DNS and method on the page *before* the first scan, and check the upstream's
+  acceptable use policy first (Vultr does not allow scanning).

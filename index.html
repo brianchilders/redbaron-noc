@@ -21,7 +21,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>redbaron enterprises NOC</title>
-  <meta name="description" content="Network operations contacts, routing policy and abuse policy for redbaron enterprises, an independent network for hobbyists.">
+  <meta name="description" content="redbaron enterprises: an independent network for builders, researchers and communities. Network operations contacts, routing policy, research policy and abuse policy.">
   <!-- Tell the browser both color schemes are supported (form controls, scrollbars). -->
   <meta name="color-scheme" content="light dark">
   <!-- Inline SVG favicon (keeps the page a single file). Replaces the old Blogger icon browsers cached for this host. -->
@@ -114,11 +114,12 @@
 
   <header>
     <h1>redbaron enterprises</h1>
-    <p>Network Operations Center &middot; an independent network for hobbyists</p>
+    <p>Network Operations Center &middot; an independent network for builders, researchers and communities</p>
     <nav aria-label="Sections">
       <a href="#contacts">Contacts</a>
       <a href="#network">Network</a>
       <a href="#routing">Routing policy</a>
+      <a href="#research">Research</a>
       <a href="#operations">Operations</a>
       <a href="#policy">Abuse policy</a>
     </nav>
@@ -135,7 +136,8 @@
          ============================================================ -->
     <section id="about">
       <h2>About</h2>
-      <p>redbaron enterprises supports people who build, experiment with, and learn about networks as a hobby.</p>
+      <p>redbaron enterprises supports the people who build networks: researchers measuring and improving the Internet, community networks connecting their neighbors, amateur radio operators running packet networks, and hobbyists learning by doing.</p>
+      <p>We support the work of ARIN, RIPE, and the other regional Internet registries and network operator groups that keep the Internet running.</p>
       <dl>
         <dt>Operator</dt>
         <dd>Brian Childers, sole proprietor, doing business as redbaron enterprises</dd>
@@ -248,6 +250,22 @@
 
       <h3>Peering</h3>
       <p>None. We do not peer; all traffic is carried by our upstream transit provider.</p>
+    </section>
+
+    <!-- ============================================================
+         RESEARCH
+         We support network research but do NOT run scanning or other
+         active measurement (our planned upstream, Vultr, does not allow
+         scanning). If that ever changes, publish the scanner source
+         addresses, reverse DNS names and method here BEFORE the first
+         scan, and only state opt-out timings you can actually meet.
+         ============================================================ -->
+    <section id="research">
+      <h2>Research</h2>
+      <p>We support network research and the people who do it. We do not run Internet-wide scanning or other experiments that send unsolicited traffic to networks we don't operate.</p>
+      <p>If we ever start, we will publish the source addresses, how to identify our traffic, and what the experiment does on this page before the first scan. Our scanners would only make ordinary protocol requests, at limited rates, and would never attempt to log in, exploit vulnerabilities, or disrupt any system.</p>
+      <h3>Opting out</h3>
+      <p>You can exclude your network from any future experiments now. Email <code>abuse@redbaron.net</code> with the IP ranges, ASNs or domains to exclude. We acknowledge opt-out requests within 48 hours and apply them within 72 hours. Exclusions are permanent.</p>
     </section>
 
     <!-- ============================================================
