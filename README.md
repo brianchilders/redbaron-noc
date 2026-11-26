@@ -22,16 +22,17 @@ To change the site, edit the files and push to `main`. Pages redeploys within a 
 ## Placeholders still to fill in
 
 Anything not yet final is tagged on the page with an amber **PLACEHOLDER**,
-**PLANNED** or **NOT ACTIVE YET** tag. To find them all, search `index.html` for `class="ph"`.
+**PLANNED** or **PENDING ARIN** tag. To find them all, search `index.html` for `class="ph"`.
 Remove the "This page is being completed" banner once they're all gone.
 
-- [ ] **Role aliases:** create `noc@`, `abuse@`, `security@`, `hostmaster@` and `postmaster@`
-      in Google Workspace, all delivering to childers@redbaron.net.
+- [x] **Role addresses:** `noc@`, `abuse@`, `security@`, `hostmaster@` and `postmaster@` exist
+      as Google Groups (abuse/postmaster can't be aliases, since Google reserves them). A Gmail
+      filter keeps them out of Spam. security@, hostmaster@ and postmaster@ are live on the page.
 - [ ] **ARIN role POC:** create a role POC that uses the role addresses and assign it as the
       Org's NOC, Tech and Abuse POC. BC117-ARIN stays as Admin.
-      Then make the aliases into `mailto:` links on the page, remove their tags,
-      add the role POC handle, and switch the abuse policy address to `abuse@`.
-- [ ] **security.txt:** add `Contact: mailto:security@redbaron.net` as the first Contact line.
+      Then make `noc@` and `abuse@` into `mailto:` links on the page, remove their PENDING ARIN tags,
+      add the role POC handles, and switch the abuse policy address to `abuse@`.
+- [x] **security.txt:** `security@` is the first Contact line.
 - [ ] **ASN, IPv4 and IPv6 prefixes:** fill these in and link each to its ARIN RDAP record.
       Add bgp.tools / bgp.he.net links once the ASN is known.
 - [ ] **Upstream transit:** Vultr (AS20473), Chicago, is listed with a PLANNED tag. Remove the tag

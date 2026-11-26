@@ -1,6 +1,6 @@
 # RFC 9116 security contact file
-# When security@redbaron.net is live, list it as the first Contact line
-# and keep childers@ as a second Contact line.
+# Contacts in order of preference.
+Contact: mailto:security@redbaron.net
 Contact: mailto:childers@redbaron.net
 Expires: 2027-11-25T00:00:00Z
 Preferred-Languages: en
