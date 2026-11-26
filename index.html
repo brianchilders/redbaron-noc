@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--
+  redbaron enterprises — Network Operations Center (NOC) page
+  ==========================================================
+  Hosted on GitHub Pages so it is OFF-NET: it stays reachable even when
+  the redbaron network itself is down. Do not move it onto our own /24
+  or the VPS.
+
+  Single self-contained file: inline CSS, no JavaScript, no frameworks,
+  no build step, no analytics or third-party scripts.
+
+  See README.md for the yearly maintenance checklist.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>redbaron enterprises NOC</title>
+  <meta name="description" content="Network operations contacts for redbaron enterprises, an independent network for hobbyists.">
+  <!-- Tell the browser both color schemes are supported (form controls, scrollbars). -->
+  <meta name="color-scheme" content="light dark">
+
+  <style>
+    /* ---- Color tokens: light mode is the default ---- */
+    :root {
+      --bg:     #ffffff;
+      --fg:     #1b1b1b;
+      --muted:  #5a5a5a;
+      --accent: #a31515;   /* "red baron" red */
+      --rule:   #dddddd;
+      --card:   #f6f6f6;
+    }
+
+    /* ---- Dark mode: same tokens, swapped values, follows the OS setting ---- */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:     #141414;
+        --fg:     #e8e8e8;
+        --muted:  #a0a0a0;
+        --accent: #ff6b6b;
+        --rule:   #333333;
+        --card:   #1e1e1e;
+      }
+    }
+
+    /* ---- Base layout: one readable column, comfortable on phones ---- */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0 16px;               /* side gutter on small screens */
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    main, header, footer { max-width: 44rem; margin: 0 auto; }
+
+    header { padding: 2.5rem 0 1rem; border-bottom: 2px solid var(--accent); }
+    header h1 { margin: 0; font-size: 1.75rem; }
+    header p  { margin: .25rem 0 0; color: var(--muted); }
+
+    section { padding: 1.25rem 0; border-bottom: 1px solid var(--rule); }
+    h2 { margin: 0 0 .5rem; font-size: 1.15rem; color: var(--accent); }
+
+    /* Key/value lists (term on the left, value on the right; stacks on phones) */
+    dl { display: grid; grid-template-columns: max-content 1fr; gap: .35rem 1rem; margin: 0; }
+    dt { font-weight: 600; }
+    dd { margin: 0; overflow-wrap: anywhere; }
+    @media (max-width: 30rem) {
+      dl { grid-template-columns: 1fr; gap: 0; }
+      dd { margin-bottom: .6rem; }
+    }
+
+    code { background: var(--card); padding: 0 .3em; border-radius: 3px; }
+    a { color: var(--accent); }
+    .note { color: var(--muted); font-size: .9rem; }
+
+    footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .9rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>redbaron enterprises</h1>
+    <p>Network Operations Center &middot; an independent network for hobbyists</p>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         OPERATOR
+         Legal identity of the network operator. "redbaron enterprises"
+         is always written in lowercase, exactly like this.
+         ============================================================ -->
+    <section id="operator">
+      <h2>Operator</h2>
+      <p>redbaron enterprises supports people who build, experiment with, and learn about networks as a hobby.</p>
+      <dl>
+        <dt>Operator</dt>
+        <dd>Brian Childers, sole proprietor, doing business as redbaron enterprises</dd>
+        <dt>Location</dt>
+        <dd>Pleasant Prairie, Wisconsin, USA</dd>
+      </dl>
+    </section>
+
+    <!-- ============================================================
+         NETWORK
+         Number resources we announce. Update this when the ASN is
+         assigned or a PeeringDB entry is created (see README.md).
+         The prefix is a PLACEHOLDER until the real one is filled in.
+         ============================================================ -->
+    <section id="network">
+      <h2>Network</h2>
+      <dl>
+        <dt>IPv4 prefix</dt>
+        <dd><code>x.x.x.0/24</code></dd>
+        <dt>ASN</dt>
+        <dd>TBD</dd>
+      </dl>
+    </section>
+
+    <!-- ============================================================
+         CONTACTS
+         These MUST match the ARIN POC records (BC117-ARIN, plus the
+         Abuse POC). If you change an address here, change it at ARIN
+         too, and vice versa. Use role addresses, not personal ones.
+         The mailboxes are hosted off-net so they work during outages.
+         ============================================================ -->
+    <section id="contacts">
+      <h2>Contacts</h2>
+      <dl>
+        <dt>Operations (NOC)</dt>
+        <dd><a href="mailto:noc@redbaron.net">noc@redbaron.net</a></dd>
+        <dt>Abuse</dt>
+        <dd><a href="mailto:abuse@redbaron.net">abuse@redbaron.net</a></dd>
+        <dt>Phone</dt>
+        <dd><a href="tel:+12626051087">+1 262-605-1087</a></dd>
+        <dt>ARIN POC</dt>
+        <dd><a href="https://rdap.arin.net/registry/entity/BC117-ARIN">BC117-ARIN</a></dd>
+        <dt>Security</dt>
+        <dd><a href="/.well-known/security.txt">/.well-known/security.txt</a></dd>
+      </dl>
+    </section>
+
+    <!-- ============================================================
+         HOURS
+         Brian is in Central time. Name the IANA zone so there is no
+         CST/CDT confusion during daylight saving time.
+         ============================================================ -->
+    <section id="hours">
+      <h2>Hours</h2>
+      <p>Standard NOC hours: <strong>7:00 a.m.&ndash;11:00 p.m. Central (America/Chicago)</strong>, every day.</p>
+      <p class="note">Outside those hours, email is still received and handled the next morning.</p>
+    </section>
+
+    <!-- ============================================================
+         POLICY
+         Short Acceptable Use / Abuse Policy. If you change the
+         acknowledgement time, make sure you can actually meet it.
+         ============================================================ -->
+    <section id="policy">
+      <h2>Acceptable Use &amp; Abuse Policy</h2>
+      <p>Hosts on this network may not be used for spam, attacks, scanning without permission, or any other illegal or abusive activity.</p>
+      <p>Send abuse reports to <a href="mailto:abuse@redbaron.net">abuse@redbaron.net</a>. Please include source IP addresses, timestamps with time zone, and relevant logs. Reports are acknowledged within 24 hours.</p>
+      <p>Confirmed abuse is stopped promptly, and the responsible host may be disconnected.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2026 redbaron enterprises
+  </footer>
+
+</body>
+</html>
