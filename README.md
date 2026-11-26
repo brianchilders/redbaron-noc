@@ -21,8 +21,8 @@ To change the site, edit the files and push to `main`. Pages redeploys within a 
 
 ## Placeholders still to fill in
 
-Anything not yet final is tagged on the page with an amber **PLACEHOLDER** or
-**NOT ACTIVE YET** tag. To find them all, search `index.html` for `class="ph"`.
+Anything not yet final is tagged on the page with an amber **PLACEHOLDER**,
+**PLANNED** or **NOT ACTIVE YET** tag. To find them all, search `index.html` for `class="ph"`.
 Remove the "This page is being completed" banner once they're all gone.
 
 - [ ] **Role aliases:** create `noc@`, `abuse@`, `security@`, `hostmaster@` and `postmaster@`
@@ -34,14 +34,14 @@ Remove the "This page is being completed" banner once they're all gone.
 - [ ] **security.txt:** add `Contact: mailto:security@redbaron.net` as the first Contact line.
 - [ ] **ASN, IPv4 and IPv6 prefixes:** fill these in and link each to its ARIN RDAP record.
       Add bgp.tools / bgp.he.net links once the ASN is known.
-- [ ] **Upstream transit:** add the provider name and ASN.
+- [ ] **Upstream transit:** Vultr (AS20473), Chicago, is listed with a PLANNED tag. Remove the tag
+      once the BGP session is up. If a second upstream is added, list it and revisit Peering and BCP 84.
 - [ ] **PeeringDB:** create the entry, link it, and set its Policy URL to `https://www.redbaron.net/#routing`.
 - [ ] **RPKI:** create ROAs in ARIN Hosted RPKI. Let ARIN's IRR Auto-Manager create the route objects.
 - [ ] **ROV and BCP 38:** turn on dropping of RPKI-invalid routes and source-address
       filtering on the router. Remove those tags only once they're actually done.
 - [ ] **Geofeed:** uncomment the lines in `geofeed.csv` with the real prefixes, then add
       `Geofeed https://www.redbaron.net/geofeed.csv` to the ARIN NetRange comment.
-- [ ] **Peering policy:** state open, selective, or none.
 
 ## Maintenance checklist
 
