@@ -1,5 +1,5 @@
 # RFC 9116 security contact file
-Contact: mailto:abuse@redbaron.net
+Contact: mailto:childers@redbaron.net
 Expires: 2027-11-25T00:00:00Z
 Preferred-Languages: en
 Canonical: https://www.redbaron.net/.well-known/security.txt

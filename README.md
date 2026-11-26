@@ -23,8 +23,8 @@ To change the site, edit the files and push to `main`. Pages redeploys within a 
 - **Every year:** update the `Expires:` date in `.well-known/security.txt`.
   It's currently `2027-11-25`. RFC 9116 says to keep it less than a year out,
   so set a reminder for early November.
-- **Keep the contacts in sync with ARIN.** The addresses on the page
-  (`noc@`, `abuse@`, phone) must match the ARIN POC
+- **Keep the contacts in sync with ARIN.** The email on the page and in
+  `security.txt` (`childers@redbaron.net`) and the phone number must match the ARIN POC
   [BC117-ARIN](https://rdap.arin.net/registry/entity/BC117-ARIN) and the Abuse POC.
   ARIN also sends an annual POC validation email, so answer it.
 - **Network section:** replace the `x.x.x.0/24` placeholder with the real
