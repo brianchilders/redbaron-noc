@@ -9,6 +9,11 @@
   Single self-contained file: inline CSS, no JavaScript, no frameworks,
   no build step, no analytics or third-party scripts.
 
+  PLACEHOLDERS: anything not yet known is wrapped in
+  <span class="ph">PLACEHOLDER</span> so it shows on the page as an amber tag.
+  To find them all, search this file for class="ph". When every placeholder
+  is filled in, delete the "This page is being completed" banner too.
+
   See README.md for the yearly maintenance checklist.
 -->
 <html lang="en">
@@ -16,7 +21,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>redbaron enterprises NOC</title>
-  <meta name="description" content="Network operations contacts for redbaron enterprises, an independent network for hobbyists.">
+  <meta name="description" content="Network operations contacts, routing policy and abuse policy for redbaron enterprises, an independent network for hobbyists.">
   <!-- Tell the browser both color schemes are supported (form controls, scrollbars). -->
   <meta name="color-scheme" content="light dark">
   <!-- Inline SVG favicon (keeps the page a single file). Replaces the old Blogger icon browsers cached for this host. -->
@@ -31,6 +36,9 @@
       --accent: #a31515;   /* "red baron" red */
       --rule:   #dddddd;
       --card:   #f6f6f6;
+      --ph-bg:  #fff4d6;   /* placeholder tag: amber */
+      --ph-fg:  #7a4b00;
+      --ph-bd:  #e0b54a;
     }
 
     /* ---- Dark mode: same tokens, swapped values, follows the OS setting ---- */
@@ -42,6 +50,9 @@
         --accent: #ff6b6b;
         --rule:   #333333;
         --card:   #1e1e1e;
+        --ph-bg:  #3a2e12;
+        --ph-fg:  #ffd27a;
+        --ph-bd:  #8a6a24;
       }
     }
 
@@ -59,9 +70,12 @@
     header { padding: 2.5rem 0 1rem; border-bottom: 2px solid var(--accent); }
     header h1 { margin: 0; font-size: 1.75rem; }
     header p  { margin: .25rem 0 0; color: var(--muted); }
+    nav { margin-top: .75rem; font-size: .9rem; }
+    nav a { margin-right: .9rem; white-space: nowrap; }
 
     section { padding: 1.25rem 0; border-bottom: 1px solid var(--rule); }
     h2 { margin: 0 0 .5rem; font-size: 1.15rem; color: var(--accent); }
+    h3 { margin: 1rem 0 .35rem; font-size: 1rem; }
 
     /* Key/value lists (term on the left, value on the right; stacks on phones) */
     dl { display: grid; grid-template-columns: max-content 1fr; gap: .35rem 1rem; margin: 0; }
@@ -72,9 +86,26 @@
       dd { margin-bottom: .6rem; }
     }
 
+    ul { margin: .25rem 0; padding-left: 1.25rem; }
+    li { margin: .2rem 0; }
     code { background: var(--card); padding: 0 .3em; border-radius: 3px; }
     a { color: var(--accent); }
     .note { color: var(--muted); font-size: .9rem; }
+
+    /* Placeholder tag: marks anything not yet final */
+    .ph {
+      display: inline-block;
+      font-size: .7rem; font-weight: 700; letter-spacing: .04em;
+      padding: 0 .4em; margin-right: .35em;
+      border: 1px dashed var(--ph-bd); border-radius: 3px;
+      background: var(--ph-bg); color: var(--ph-fg);
+      vertical-align: .1em;
+    }
+    .banner {
+      margin: 1rem 0 0; padding: .6rem .8rem;
+      border: 1px dashed var(--ph-bd); border-radius: 4px;
+      background: var(--ph-bg); color: var(--ph-fg); font-size: .9rem;
+    }
 
     footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .9rem; }
   </style>
@@ -84,6 +115,15 @@
   <header>
     <h1>redbaron enterprises</h1>
     <p>Network Operations Center &middot; an independent network for hobbyists</p>
+    <nav aria-label="Sections">
+      <a href="#contacts">Contacts</a>
+      <a href="#network">Network</a>
+      <a href="#routing">Routing policy</a>
+      <a href="#operations">Operations</a>
+      <a href="#policy">Abuse policy</a>
+    </nav>
+    <!-- Remove this banner once every PLACEHOLDER below is filled in. -->
+    <p class="banner">This page is being completed. Items tagged <span class="ph">PLACEHOLDER</span> are not final yet. The contacts that are not tagged are current and monitored.</p>
   </header>
 
   <main>
@@ -105,40 +145,124 @@
     </section>
 
     <!-- ============================================================
-         NETWORK
-         Number resources we announce. Update this when the ASN is
-         assigned or a PeeringDB entry is created (see README.md).
-         The prefix is a PLACEHOLDER until the real one is filled in.
-         ============================================================ -->
-    <section id="network">
-      <h2>Network</h2>
-      <dl>
-        <dt>IPv4 prefix</dt>
-        <dd><code>x.x.x.0/24</code></dd>
-        <dt>ASN</dt>
-        <dd>TBD</dd>
-      </dl>
-    </section>
-
-    <!-- ============================================================
          CONTACTS
-         These MUST match the ARIN POC records (BC117-ARIN, plus the
-         Abuse POC). If you change an address here, change it at ARIN
-         too, and vice versa. One address handles operations, abuse
-         and security reports. Keep the mailbox hosted off-net so it
-         works during outages.
+         Role addresses MUST match the ARIN POC records. If you change an
+         address here, change it at ARIN too, and vice versa.
+         All mail is hosted off-net (Google Workspace) so it works during
+         outages.
+         The role aliases are not created yet: they are shown WITHOUT
+         mailto links and tagged "not active yet". When an alias is live
+         AND the ARIN role POC uses it, turn it into a mailto link and
+         remove its tag.
          ============================================================ -->
     <section id="contacts">
       <h2>Contacts</h2>
       <dl>
-        <dt>Operations &amp; abuse</dt>
-        <dd><a href="mailto:childers@redbaron.net">childers@redbaron.net</a></dd>
+        <dt>All reports</dt>
+        <dd><a href="mailto:childers@redbaron.net">childers@redbaron.net</a> <span class="note">(operations, abuse and security; current and monitored)</span></dd>
         <dt>Phone</dt>
         <dd><a href="tel:+12626051087">+1 262-605-1087</a></dd>
-        <dt>ARIN POC</dt>
-        <dd><a href="https://rdap.arin.net/registry/entity/BC117-ARIN">BC117-ARIN</a></dd>
+      </dl>
+
+      <h3>Role addresses (RFC 2142)</h3>
+      <dl>
+        <dt>Network operations</dt>
+        <dd><span class="ph">NOT ACTIVE YET</span><code>noc@redbaron.net</code></dd>
+        <dt>Abuse reports</dt>
+        <dd><span class="ph">NOT ACTIVE YET</span><code>abuse@redbaron.net</code></dd>
         <dt>Security</dt>
-        <dd><a href="/.well-known/security.txt">/.well-known/security.txt</a></dd>
+        <dd><span class="ph">NOT ACTIVE YET</span><code>security@redbaron.net</code> &middot; <a href="/.well-known/security.txt">security.txt</a></dd>
+        <dt>DNS &amp; reverse DNS</dt>
+        <dd><span class="ph">NOT ACTIVE YET</span><code>hostmaster@redbaron.net</code></dd>
+        <dt>Mail</dt>
+        <dd><span class="ph">NOT ACTIVE YET</span><code>postmaster@redbaron.net</code></dd>
+      </dl>
+      <p class="note">Until these are active, please use childers@redbaron.net for everything.</p>
+
+      <h3>ARIN points of contact</h3>
+      <dl>
+        <dt>Admin</dt>
+        <dd><a href="https://rdap.arin.net/registry/entity/BC117-ARIN">BC117-ARIN</a></dd>
+        <dt>NOC, Tech &amp; Abuse</dt>
+        <dd><span class="ph">PLACEHOLDER</span>Role POC handle not created yet</dd>
+      </dl>
+    </section>
+
+    <!-- ============================================================
+         NETWORK
+         Number resources we announce, with links to their registry
+         records (ARIN RDAP) and public routing views.
+         When the ASN is known, replace ASxxxxx everywhere in this file
+         (including the bgp.tools / bgp.he.net links).
+         ============================================================ -->
+    <section id="network">
+      <h2>Network</h2>
+      <dl>
+        <dt>ASN</dt>
+        <dd><span class="ph">PLACEHOLDER</span><code>ASxxxxx</code></dd>
+        <dt>IPv4</dt>
+        <dd><span class="ph">PLACEHOLDER</span><code>x.x.x.0/24</code></dd>
+        <dt>IPv6</dt>
+        <dd><span class="ph">PLACEHOLDER</span><code>xxxx:xxxx:xxxx::/48</code></dd>
+        <dt>Upstream transit</dt>
+        <dd><span class="ph">PLACEHOLDER</span>Provider name and ASN</dd>
+        <dt>PeeringDB</dt>
+        <dd><span class="ph">PLACEHOLDER</span>Entry not created yet</dd>
+        <dt>Routing views</dt>
+        <dd><span class="ph">PLACEHOLDER</span>bgp.tools and bgp.he.net links, once the ASN is known</dd>
+        <dt>Geolocation</dt>
+        <dd><a href="/geofeed.csv">geofeed.csv</a> (<a href="https://www.rfc-editor.org/rfc/rfc8805">RFC 8805</a>) <span class="ph">PLACEHOLDER</span>prefix not filled in yet</dd>
+      </dl>
+    </section>
+
+    <!-- ============================================================
+         ROUTING POLICY
+         Our routing-security commitments (MANRS-style). Linkable as
+         https://www.redbaron.net/#routing (use this as the PeeringDB
+         "Policy URL").
+         Only remove a placeholder tag once the statement is actually
+         true in the network.
+         ============================================================ -->
+    <section id="routing">
+      <h2>Routing Policy</h2>
+
+      <h3>What we announce</h3>
+      <ul>
+        <li>We originate only the prefixes listed under <a href="#network">Network</a>: IPv4 no more specific than /24, IPv6 no more specific than /48.</li>
+        <li><span class="ph">PLACEHOLDER</span>We do not provide transit and have no downstream networks.</li>
+      </ul>
+
+      <h3>Route origin validation</h3>
+      <dl>
+        <dt>RPKI ROAs</dt>
+        <dd><span class="ph">PLACEHOLDER</span>Published through ARIN Hosted RPKI for all our prefixes</dd>
+        <dt>IRR</dt>
+        <dd><span class="ph">PLACEHOLDER</span>Route objects in the ARIN IRR (as-set <code>AS-REDBARON</code>)</dd>
+        <dt>Inbound filtering</dt>
+        <dd><span class="ph">PLACEHOLDER</span>We drop RPKI-invalid routes from all neighbors</dd>
+      </dl>
+
+      <h3>Anti-spoofing</h3>
+      <p><span class="ph">PLACEHOLDER</span>We drop outbound traffic whose source address is not one of our own prefixes (<a href="https://www.rfc-editor.org/info/bcp38">BCP 38</a> / <a href="https://www.rfc-editor.org/info/bcp84">BCP 84</a>).</p>
+
+      <h3>Peering</h3>
+      <p><span class="ph">PLACEHOLDER</span>Peering policy (open, selective, or none) and where to request a session</p>
+    </section>
+
+    <!-- ============================================================
+         OPERATIONS
+         How we communicate maintenance and outages. This page is
+         off-net, so it stays up when our network is down.
+         ============================================================ -->
+    <section id="operations">
+      <h2>Operations</h2>
+      <dl>
+        <dt>Planned maintenance</dt>
+        <dd>Announced in this section in advance whenever possible.</dd>
+        <dt>Scheduled</dt>
+        <dd>None.</dd>
+        <dt>During an outage</dt>
+        <dd>This page, our email and our phone are all hosted outside our own network, so they stay reachable while it is down.</dd>
       </dl>
     </section>
 
@@ -157,6 +281,8 @@
          POLICY
          Short Acceptable Use / Abuse Policy. If you change the
          acknowledgement time, make sure you can actually meet it.
+         security.txt points its Policy: field here (#policy).
+         When abuse@ is live, switch the address below to it.
          ============================================================ -->
     <section id="policy">
       <h2>Acceptable Use &amp; Abuse Policy</h2>
@@ -167,8 +293,9 @@
 
   </main>
 
+  <!-- Update "Last reviewed" whenever you check the page against ARIN. -->
   <footer>
-    &copy; 2026 redbaron enterprises
+    Last reviewed <time datetime="2026-11-25">2026-11-25</time> &middot; &copy; 2026 redbaron enterprises
   </footer>
 
 </body>

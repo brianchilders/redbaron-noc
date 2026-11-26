@@ -1,0 +1,10 @@
+# redbaron enterprises self-published IP geolocation feed (RFC 8805)
+# Format: prefix,country,region,city,postal_code  (postal code is deprecated; leave empty)
+#
+# PLACEHOLDER: no live entries yet. When the real prefixes are known,
+# uncomment the lines below and replace the placeholder prefixes.
+# Then add this line to the ARIN NetRange comment field (RFC 9632):
+#   Geofeed https://www.redbaron.net/geofeed.csv
+#
+# x.x.x.0/24,US,US-WI,Pleasant Prairie,
+# xxxx:xxxx:xxxx::/48,US,US-WI,Pleasant Prairie,
