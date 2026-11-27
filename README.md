@@ -21,18 +21,17 @@ To change the site, edit the files and push to `main`. Pages redeploys within a 
 
 ## Placeholders still to fill in
 
-Anything not yet final is tagged on the page with an amber **PLACEHOLDER**,
-**PLANNED** or **PENDING ARIN** tag. To find them all, search `index.html` for `class="ph"`.
+Anything not yet final is tagged on the page with an amber **PLACEHOLDER**
+or **PLANNED** tag. To find them all, search `index.html` for `class="ph"`.
 Remove the "This page is being completed" banner once they're all gone.
 
 - [x] **Role addresses:** `noc@`, `abuse@`, `security@`, `hostmaster@` and `postmaster@` exist
       as Google Groups (abuse/postmaster can't be aliases, since Google reserves them). A Gmail
-      filter keeps them out of Spam. security@, hostmaster@ and postmaster@ are live on the page.
-- [ ] **ARIN role POC:** create a role POC that uses the role addresses and assign it as the
-      Org's NOC, Tech and Abuse POC. BC117-ARIN stays as Admin.
-      Then make `noc@` and `abuse@` into `mailto:` links on the page, remove their PENDING ARIN tags,
-      add the role POC handles, and switch the abuse policy address to `abuse@`.
-      Also link `abuse@` in the Research section's opt-out paragraph.
+      filter keeps them out of Spam. All five are live on the page.
+- [x] **ARIN role POCs:** REN32-ARIN (redbaron enterprises NOC, noc@) and REA38-ARIN
+      (redbaron enterprises Abuse, abuse@) created 2026-11-26 and shown on the page.
+- [ ] **Attach them to org BCSP-6:** Tech + NOC = REN32-ARIN, Abuse = REA38-ARIN, Admin = BC117-ARIN.
+      Once BCSP-6 shows up in public Whois, link it on the page too.
 - [x] **security.txt:** `security@` is the first Contact line.
 - [ ] **ASN, IPv4 and IPv6 prefixes:** fill these in and link each to its ARIN RDAP record.
       Add bgp.tools / bgp.he.net links once the ASN is known.
@@ -51,7 +50,7 @@ Remove the "This page is being completed" banner once they're all gone.
   It's currently `2027-11-25`. RFC 9116 says to keep it less than a year out,
   so set a reminder for early November.
 - **Keep contacts in sync with ARIN.** Every address on the page must match the ARIN
-  POC records ([BC117-ARIN](https://rdap.arin.net/registry/entity/BC117-ARIN) and the role POC).
+  POC records (BC117-ARIN, REN32-ARIN and REA38-ARIN).
   If you change one, change the other. ARIN sends an annual POC validation email, so answer it.
 - **Keep `geofeed.csv` in sync with the Network section** whenever prefixes are added or move.
 - **When you review the page**, update the "Last reviewed" date in the footer.

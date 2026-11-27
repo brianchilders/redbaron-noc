@@ -153,41 +153,38 @@
          All mail is hosted off-net (Google Workspace) so it works during
          outages.
          All five role addresses are Google Groups (redbaron.net is an
-         alias domain of childers.org). security@, hostmaster@ and
-         postmaster@ are live. noc@ and abuse@ work but are tagged
-         "PENDING ARIN" with no mailto link until the ARIN role POCs
-         use them; then link them and remove the tags.
+         alias domain of childers.org), filtered out of Spam in Gmail.
+         ARIN POCs (org BCSP-6): REN32-ARIN = Tech + NOC (noc@),
+         REA38-ARIN = Abuse (abuse@), BC117-ARIN = Admin (childers@).
          ============================================================ -->
     <section id="contacts">
       <h2>Contacts</h2>
       <dl>
-        <dt>All reports</dt>
-        <dd><a href="mailto:childers@redbaron.net">childers@redbaron.net</a> <span class="note">(operations, abuse and security; current and monitored)</span></dd>
-        <dt>Phone</dt>
-        <dd><a href="tel:+12626051087">+1 262-605-1087</a></dd>
-      </dl>
-
-      <h3>Role addresses (RFC 2142)</h3>
-      <dl>
         <dt>Network operations</dt>
-        <dd><span class="ph">PENDING ARIN</span><code>noc@redbaron.net</code></dd>
+        <dd><a href="mailto:noc@redbaron.net">noc@redbaron.net</a></dd>
         <dt>Abuse reports</dt>
-        <dd><span class="ph">PENDING ARIN</span><code>abuse@redbaron.net</code></dd>
+        <dd><a href="mailto:abuse@redbaron.net">abuse@redbaron.net</a> <span class="note">(see the <a href="#policy">abuse policy</a>)</span></dd>
         <dt>Security</dt>
         <dd><a href="mailto:security@redbaron.net">security@redbaron.net</a> &middot; <a href="/.well-known/security.txt">security.txt</a></dd>
         <dt>DNS &amp; reverse DNS</dt>
         <dd><a href="mailto:hostmaster@redbaron.net">hostmaster@redbaron.net</a></dd>
         <dt>Mail</dt>
         <dd><a href="mailto:postmaster@redbaron.net">postmaster@redbaron.net</a></dd>
+        <dt>Phone</dt>
+        <dd><a href="tel:+12626051087">+1 262-605-1087</a></dd>
+        <dt>Operator</dt>
+        <dd><a href="mailto:childers@redbaron.net">childers@redbaron.net</a></dd>
       </dl>
-      <p class="note">Until the addresses tagged PENDING ARIN are live, send operations and abuse reports to childers@redbaron.net.</p>
+      <p class="note">All addresses are monitored and hosted outside our network, so they keep working during an outage.</p>
 
       <h3>ARIN points of contact</h3>
       <dl>
+        <dt>Tech &amp; NOC</dt>
+        <dd><a href="https://whois.arin.net/rest/poc/REN32-ARIN.html">REN32-ARIN</a> <span class="note">(redbaron enterprises NOC)</span></dd>
+        <dt>Abuse</dt>
+        <dd><a href="https://whois.arin.net/rest/poc/REA38-ARIN.html">REA38-ARIN</a> <span class="note">(redbaron enterprises Abuse)</span></dd>
         <dt>Admin</dt>
-        <dd><a href="https://rdap.arin.net/registry/entity/BC117-ARIN">BC117-ARIN</a></dd>
-        <dt>NOC, Tech &amp; Abuse</dt>
-        <dd><span class="ph">PLACEHOLDER</span>Role POC handle not created yet</dd>
+        <dd><a href="https://whois.arin.net/rest/poc/BC117-ARIN.html">BC117-ARIN</a> <span class="note">(Brian Childers)</span></dd>
       </dl>
     </section>
 
@@ -265,7 +262,7 @@
       <p>We support network research and the people who do it. We do not run Internet-wide scanning or other experiments that send unsolicited traffic to networks we don't operate.</p>
       <p>If we ever start, we will publish the source addresses, how to identify our traffic, and what the experiment does on this page before the first scan. Our scanners would only make ordinary protocol requests, at limited rates, and would never attempt to log in, exploit vulnerabilities, or disrupt any system.</p>
       <h3>Opting out</h3>
-      <p>You can exclude your network from any future experiments now. Email <code>abuse@redbaron.net</code> with the IP ranges, ASNs or domains to exclude. We acknowledge opt-out requests within 48 hours and apply them within 72 hours. Exclusions are permanent.</p>
+      <p>You can exclude your network from any future experiments now. Email <a href="mailto:abuse@redbaron.net">abuse@redbaron.net</a> with the IP ranges, ASNs or domains to exclude. We acknowledge opt-out requests within 48 hours and apply them within 72 hours. Exclusions are permanent.</p>
     </section>
 
     <!-- ============================================================
@@ -301,12 +298,11 @@
          Short Acceptable Use / Abuse Policy. If you change the
          acknowledgement time, make sure you can actually meet it.
          security.txt points its Policy: field here (#policy).
-         When abuse@ is live, switch the address below to it.
          ============================================================ -->
     <section id="policy">
       <h2>Acceptable Use &amp; Abuse Policy</h2>
       <p>Hosts on this network may not be used for spam, attacks, scanning without permission, or any other illegal or abusive activity.</p>
-      <p>Send abuse reports to <a href="mailto:childers@redbaron.net">childers@redbaron.net</a>. Please include source IP addresses, timestamps with time zone, and relevant logs. Reports are acknowledged within 24 hours.</p>
+      <p>Send abuse reports to <a href="mailto:abuse@redbaron.net">abuse@redbaron.net</a>. Please include source IP addresses, timestamps with time zone, and relevant logs. Reports are acknowledged within 24 hours.</p>
       <p>Confirmed abuse is stopped promptly, and the responsible host may be disconnected.</p>
     </section>
 
